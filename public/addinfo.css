@@ -1,0 +1,21 @@
+
+body{
+    padding: 1em;
+}
+
+input{
+    border: 2px solid brown;
+    border-radius: 10px;
+    height: 20px;
+    width: 200px;
+    padding: 5px;
+}
+
+button{
+    background-color: #d5c7ff;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 50px;
+    border: 2px solid #aa8eff;
+}
