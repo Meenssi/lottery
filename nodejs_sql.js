@@ -28,7 +28,8 @@ const pool = mysql.createPool({
 var obj = {} //Global Variables
 
 
-app.get('',(req, res) => {
+
+app.get('/',(req, res) => {
  
     pool.getConnection((err, connection) => {  
         if(err) throw err
@@ -79,12 +80,32 @@ app.post('/addinfo',(req,res) => {
 })
 
 app.get('/:draw',(req, res) => {
- 
+
     pool.getConnection((err, connection) => {  
         if(err) throw err
         console.log("connected id : ?" ,connection.threadId) 
  
         connection.query('SELECT * FROM lottery WHERE `draw` = ?', req.params.draw, (err, rows) => { 
+            connection.release();
+            if(!err){ 
+                obj = {lottery : rows, Error : err}
+                res.render('index', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
+
+
+
+app.get('//:category',(req, res) => {
+
+    pool.getConnection((err, connection) => {  
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) 
+ 
+        connection.query('SELECT * FROM lottery WHERE `category` = ? ', req.params.category, (err, rows) => { 
             connection.release();
             if(!err){ 
                 obj = {lottery : rows, Error : err}
