@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Prizes</title>
+</head>
+<body>
+    <% if(typeof mesg != "undefined") { %>
+        <h1><%= mesg %></h1>
+        <% } %>
+    <div class="add">
+        <h1>Add Prizes</h1>
+        <form action="/addinfo" method="post">
+            <div>
+                <h3>id</h3>
+                <input class="input" type="text" name="id" id="id">
+            </div>
+            <div>
+                <h3>Date</h3>
+                <input class="input" type="date" name="date" id="date">
+            </div>
+            <div>
+                <h3>Category</h3>
+                <input class="input" type="text" name="category" id="category">
+            </div>
+            <div>
+                <h3>Draw</h3>
+                <input class="input" type="text" name="draw" id="draw">
+            </div>
+            <div>
+                <h3>Prize</h3>
+                <input class="input" type="text" name="prize" id="prize">
+            </div>
+            
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>
