@@ -27,7 +27,9 @@ const pool = mysql.createPool({
 
 var obj = {} //Global Variables
 
-
+app.get('/credits', (req, res) => {
+    res.render('credits')
+})
 
 app.get('',(req, res) => {
  
