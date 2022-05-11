@@ -9,15 +9,13 @@
 <body>
     <table>
         <tr>
-            
-            <th>Date</th>
-            <th>Category</th>
-            <th>Draw</th>
-            <th>Prize</th>
+            <th>วันที่</th>
+            <th>หมวดหมู่</th>
+            <th>เลขที่ออก</th>
+            <th>รางวัล</th>
         </tr>
         <% lottery.forEach(function(item) { %>
-        <tr>
-            
+        <tr> 
             <td><%= item.date %></td>
             <td><%= item.category %></td>
             <td><%= item.draw %></td>
@@ -25,5 +23,13 @@
         </tr>
     <% }) %>
     </table>
+    <p>ตรวจสอบรางวัล</p>
+    <form action="/" method="get">
+        <div>
+            <input class="input" type="text" name="" id="draw">
+            <button type="submit">submit</button>
+        <div>
+    </form>
+
 </body>
 </html>

@@ -78,6 +78,24 @@ app.post('/addinfo',(req,res) => {
     }) 
 })
 
+app.get('/:draw',(req, res) => {
+ 
+    pool.getConnection((err, connection) => {  
+        if(err) throw err
+        console.log("connected id : ?" ,connection.threadId) 
+ 
+        connection.query('SELECT * FROM lottery WHERE `draw` = ?', req.params.draw, (err, rows) => { 
+            connection.release();
+            if(!err){ 
+                obj = {lottery : rows, Error : err}
+                res.render('index', obj)
+            } else {
+                console.log(err)
+            }
+         }) 
+    })
+})
+
 
 app.listen(port, () => 
     console.log("listen on port : ?", port)
