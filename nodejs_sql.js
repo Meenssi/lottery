@@ -29,7 +29,7 @@ var obj = {} //Global Variables
 
 
 
-app.get('/',(req, res) => {
+app.get('',(req, res) => {
  
     pool.getConnection((err, connection) => {  
         if(err) throw err

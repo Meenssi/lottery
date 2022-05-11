@@ -4,6 +4,7 @@ table{
     background-color: #ffffff;
     width: 70%;
     text-align: center
+    
 }
 
 th{
@@ -15,8 +16,9 @@ th{
 }
 
 td{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Dosis', sans-serif;
     letter-spacing: 1px;
     color: rgb(0, 0, 0);
     height: 40px;
+    border: 2px solid #e1e1e1;
 }
