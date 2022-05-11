@@ -99,8 +99,6 @@ app.get('/:draw',(req, res) => {
     })
 })
 
-
-
 app.get('//:category',(req, res) => {
 
     pool.getConnection((err, connection) => {  
